@@ -1,0 +1,4 @@
+#default stuff
+node_modules
+config.json
+/.eslintrc.json
