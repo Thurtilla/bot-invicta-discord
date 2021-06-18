@@ -24,7 +24,7 @@ module.exports = {
 					You have been approved and have been awarded the rank: Trial
 					Take a look at <#854851072857079828> to assign yourself the correct roles.
 
-					Remember to change your discord name on the server to your ingame name so we can invite you to the guild.
+					Whisper any of us ingame/discord "Beachedwhale", "Fenixo" or "Thurtilla" to get an invite to <Invicta>
 					`)
 					.setTimestamp()
 					.setFooter('Welcome to: Invicta');
