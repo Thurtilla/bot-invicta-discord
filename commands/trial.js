@@ -1,7 +1,7 @@
 module.exports = {
 	name: 'trial',
 	description: 'Remove initiate status and adds trial',
-	execute(message, args) {
+	execute(message) {
 		const Discord = require('discord.js');
 		const commandChannel = '854851072857079837';
 		if (!message.guild) return;

@@ -4,8 +4,9 @@ const client = new Discord.Client();
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-
-const { prefix, token } = require('./config.json');
+require('dotenv').config();
+// const { prefix, token } = require('./config.json');
+const prefix = process.env.INVICTA_PREFIX;
 
 
 client.once('ready', () => {
@@ -33,4 +34,4 @@ client.on('message', message => {
 	}
 });
 
-client.login(token);
+client.login(process.env.INVICTA_TOKEN);
