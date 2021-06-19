@@ -28,7 +28,7 @@ module.exports = {
 			.setTimestamp()
 			.setFooter('Welcome to: Invicta');
 		member.send(embed);
-		member.kick(reasonToKick).then(() => {
+		member.kick(reasonToKick.join(' ')).then(() => {
 			message.channel.send(`Successfully kicked: ${member.displayName}!`);
 		}).catch((error) => {
 			message.channel.send(error);
