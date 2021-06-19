@@ -15,7 +15,8 @@ module.exports = {
 
 		const member = message.mentions.members.first();
 		if (!member) return message.channel.send('Please mention a member to reject and kick!');
-		message.channel.send(args.shift());
+		const [, ...reasonToKick] = args;
+		message.channel.send(reasonToKick);
 		const embed = new Discord.MessageEmbed()
 			.setColor('a80000')
 			.setTitle('Rejected')
