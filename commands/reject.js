@@ -14,9 +14,8 @@ module.exports = {
 		if (!message.guild.me.hasPermission('ADMINISTRATOR')) return;
 
 		const member = message.mentions.members.first();
-		if (!member) return message.channel.send('Please mention a member to reject and kick!');
+		if (!member) return message.channel.send('Usage: !reject @member "optional: reason"');
 		const [, ...reasonToKick] = args;
-		message.channel.send(reasonToKick);
 		const embed = new Discord.MessageEmbed()
 			.setColor('a80000')
 			.setTitle('Rejected')
@@ -29,7 +28,11 @@ module.exports = {
 			.setTimestamp()
 			.setFooter('Welcome to: Invicta');
 		member.send(embed);
-		// member.kick();
+		member.kick(reasonToKick).then(() => {
+			message.channel.send(`Successfully kicked: ${member.displayName}!`);
+		}).catch((error) => {
+			message.channel.send(`Error: ${error}`);
+		});
 
 	},
 };
