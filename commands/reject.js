@@ -31,7 +31,7 @@ module.exports = {
 		member.kick(reasonToKick).then(() => {
 			message.channel.send(`Successfully kicked: ${member.displayName}!`);
 		}).catch((error) => {
-			message.channel.send(`Error: ${error}`);
+			message.channel.send(error);
 		});
 
 	},
